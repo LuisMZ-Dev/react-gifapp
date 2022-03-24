@@ -1,0 +1,26 @@
+import React, { useState } from 'react'
+
+export const GifExpertApp = () => {
+
+const [categories, setcategories] = useState(['One Punch Man','Samurai X','Dragon ball'])
+
+const handleAdd=()=>{
+ setcategories(['Hunter x Hunter',...categories ])
+}
+
+  return (
+    <>
+    <h2>Gif Expert</h2>
+    <button onClick={handleAdd}>Agregar
+    </button>
+    <ol>
+      {
+        categories.map(category =>{
+          return <li key={category}>{category}</li>
+        })
+      }
+    </ol>
+    </>
+    
+  )
+}
